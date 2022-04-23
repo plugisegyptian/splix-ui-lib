@@ -999,11 +999,11 @@ do
             end]]
         end
         --
-        utility:Connection(uis.InputBegan,function(Input)
+        utility:Connection(uis.InputBegan,function(Input,texboxt)
             for _, func in pairs(library.began) do
                 if not window.dragging then
                     local e,s = pcall(function()
-                        func(Input)
+                        func(Input,textboxt)
                     end)
                 else
                     break
