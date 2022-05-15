@@ -686,7 +686,7 @@ do
             --
             spawn(function()
                 while wait(0.1) do
-                    watermark_title.Text = string.format("$$ Splix || uid : %s || ping : %i || fps : %u", "yusuf", tostring(library.shared.ping), library.shared.fps)
+                    watermark_title.Text = string.format("$$ egyptianhaxx || uid : %s || ping : %i || fps : %u", "Yusuf", tostring(library.shared.ping), library.shared.fps)
                     window.watermark:UpdateSize()
                 end
             end)
