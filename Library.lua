@@ -681,12 +681,12 @@ do
                 library.shared.ping = tonumber(string.split(stats.Network.ServerStatsItem["Data Ping"]:GetValueString(), " ")[1] .. "")
             end)
             --
-            watermark_title.Text = string.format("$$ Splix || uid : %u || ping : %i || fps : %u", "yusuf", tostring(library.shared.ping), library.shared.fps)
+            watermark_title.Text = string.format("$$ Splix || uid : %s || ping : %i || fps : %u", "yusuf", tostring(library.shared.ping), library.shared.fps)
             window.watermark:UpdateSize()
             --
             spawn(function()
                 while wait(0.1) do
-                    watermark_title.Text = string.format("$$ Splix || uid : %u || ping : %i || fps : %u", "yusuf", tostring(library.shared.ping), library.shared.fps)
+                    watermark_title.Text = string.format("$$ Splix || uid : %s || ping : %i || fps : %u", "yusuf", tostring(library.shared.ping), library.shared.fps)
                     window.watermark:UpdateSize()
                 end
             end)
