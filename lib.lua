@@ -375,7 +375,7 @@ do
         --
         theme.accent = accent
         --
-        local window = {pages = {}, isVisible = false, uibind = Enum.KeyCode.Backquote, currentPage = nil, fading = false, dragging = false, drag = Vector2.new(0,0), currentContent = {frame = nil, dropdown = nil, multibox = nil, colorpicker = nil, keybind = nil}}
+        local window = {pages = {}, isVisible = false, uibind = Enum.KeyCode.Z, currentPage = nil, fading = false, dragging = false, drag = Vector2.new(0,0), currentContent = {frame = nil, dropdown = nil, multibox = nil, colorpicker = nil, keybind = nil}}
         --
         local main_frame = utility:Create("Frame", {Vector2.new(0,0)}, {
             Size = utility:Size(0, size.X, 0, size.Y),
@@ -981,8 +981,8 @@ do
             end
         end
         --
-        library.began[#library.began + 1] = function(Input,textboxt)
-            if Input.KeyCode == window.uibind and not textboxt then
+        library.began[#library.began + 1] = function(Input)
+            if Input.KeyCode == window.uibind then
                 window:Fade()
             end
             --[[
@@ -999,11 +999,11 @@ do
             end]]
         end
         --
-        utility:Connection(uis.InputBegan,function(Input,texboxt)
+        utility:Connection(uis.InputBegan,function(Input)
             for _, func in pairs(library.began) do
                 if not window.dragging then
                     local e,s = pcall(function()
-                        func(Input,textboxt)
+                        func(Input)
                     end)
                 else
                     break
